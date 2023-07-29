@@ -19,8 +19,11 @@ const inputDelay = formEl.elements['delay'];
 const inputStep = formEl.elements['step'];
 const inputAmount = formEl.elements['amount'];
 
-formEl.addEventListener('submit', evt => {
-  evt.preventDefault();
+formEl.addEventListener('submit', onFormSabmit)
+
+function onFormSabmit(evt){
+    evt.preventDefault();
+
   let sumMin = parseInt(inputDelay.value);
 
   for (let i = 1; i <= inputAmount.value; i+=1) {
@@ -38,4 +41,6 @@ formEl.addEventListener('submit', evt => {
       });
     sumMin += parseInt(inputStep.value);
   }
-});
+};
+
+
